@@ -3,7 +3,7 @@ import os
 import json
 import requests
 from flask import Flask, render_template, jsonify, request
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 @app.route("/")
 def index():
@@ -12,11 +12,6 @@ def index():
 @app.route('/user/<name>')
 def user(name):
     return '<h1>Hello, {0}!</h1>'.format(name)
-
-@app.route('/api/dlai', methods=['GET'])
-def dlai():
-    # return jsonify(team_list)
-    return "hello Danny'sworld!!!"
 
 ###############################################################################
 
