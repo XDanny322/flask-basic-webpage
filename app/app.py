@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # return render_template('index.html')
-    return "This is the main blank page."
+    return render_template('index.html')
 
 @app.route('/user/<name>')
 def user(name):
