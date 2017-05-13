@@ -8,14 +8,18 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # return render_template('index.html')
-    return "blank page"
+    return "This is the main blank page."
 
-###############################################################################
+@app.route('/user/<name>')
+def user(name):
+    return '<h1>Hello, {0}!</h1>'.format(name)
 
 @app.route('/api/dlai', methods=['GET'])
 def dlai():
     # return jsonify(team_list)
     return "hello Danny'sworld!!!"
+
+###############################################################################
 
 if __name__ == "__main__":
     app.debug = True
